@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OnlSchoolIne.Infrastructure;
+using OnSchoolLine;
 using OnSchoolLine.Data;
 using System;
 
@@ -26,6 +27,8 @@ namespace OnlSchoolIne
             services.AddControllers();
 
             services.AddDbContext<AppDbContext>(option => option.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddCollectionService(Configuration);
 
             services
                 .AddIdentity<AppUser, IdentityRole>()

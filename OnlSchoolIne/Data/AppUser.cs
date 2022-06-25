@@ -15,7 +15,7 @@ namespace OnSchoolLine.Data
 
         public string Address { get; set; }
 
-        public Guid ClassId { get; set; }
+        public Guid? ClassId { get; set; }
 
         public ClassModel ClassModel { get; set; }
 
